@@ -102,6 +102,6 @@ MIT / BSD
 
 ## Inspiration
 
-Role and Readme inspired by by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/), [Ansible for K8S](https://www.ansibleforkubernetes.com/), and Jeff Geerling Youtube Channel.
+Role and Readme inspired by by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/), [Ansible for K8S](https://www.ansibleforkubernetes.com/), and [Jeff Geerling Youtube Channel](https://www.youtube.com/user/geerlingguy).
 
 Also big thanks to the maintaners of [Steve Black's hosts repository](https://github.com/StevenBlack/hosts) and all upstream sources.
