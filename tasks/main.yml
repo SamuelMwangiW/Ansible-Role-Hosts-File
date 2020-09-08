@@ -1,0 +1,38 @@
+---
+- name: "Download Hosts file from {{ hosts_url }}"
+  get_url:
+    url: "{{ hosts_url }}"
+    dest: '{{ download_path }}'
+  register: result
+
+- name: Create a copy of hosts file if remote has changed
+  copy:
+    src: '{{ download_path }}'
+    dest: '{{ tmp_path }}'
+    remote_src: yes
+  when: result.changed
+
+- name: Make sure hostname resolves to localhost
+  lineinfile:
+    path: '{{ tmp_path }}'
+    regexp: "^({{ local_ip }} {{ ansible_facts.nodename }})$"
+    line: "{{ local_ip }} {{ ansible_facts.nodename }}"
+    insertafter: '127.0.0.1 localhost'
+
+- name: "Add other custom_hosts"
+  lineinfile:
+    path: '{{ tmp_path }}'
+    regexp: "( {{ item.host }})$" # Ending with hostname allowing for the IP to be changed
+    line: "{{ item.ip }} {{ item.host }}"
+    insertafter: '{{ insert_after_line }}'
+  with_items: '{{ custom_hosts }}'
+  when: custom_hosts|length
+
+- name: Copy the hosts file to /etc/hosts
+  copy:
+    src: '{{ tmp_path }}'
+    dest: '{{ hosts_file }}'
+    mode: 0644
+    owner: root
+    group: root
+    remote_src: yes

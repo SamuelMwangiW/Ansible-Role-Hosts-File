@@ -1,0 +1,31 @@
+---
+# Extra custom hosts to insert into your hosts file
+custom_hosts:
+
+recipe: 
+
+alternative: 'alternates/{{ recipe }}/'
+
+recipe_url: "{{ alternative if recipe else '' }}"
+
+# The hosts template will be downloaded to this path
+download_path: /tmp/hosts-template
+
+tmp_path: /tmp/hosts
+
+#insert custom hosts after this line
+insert_after_line: '# Custom host records are listed here.'
+
+#system hosts file
+hosts_file: /etc/hosts
+
+# localhost ip. You could use either of:
+#  1. ansible_facts.default_ipv4.address
+#  2. ansible_facts.eth0.ipv4.address # where eth0 is your network interface
+#  3. static IP e.g 127.0.0.1
+local_ip: ansible_facts.default_ipv4.address
+
+hosts_base_path: 'https://raw.githubusercontent.com/StevenBlack/hosts/master/'
+hosts_suffix: hosts
+
+hosts_url: '{{hosts_base_path}}{{ recipe_url }}{{ hosts_suffix }}'
