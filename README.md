@@ -34,7 +34,7 @@ The desired recipe as per the Steve Black's [hosts repository](https://github.co
 |**fakenews + gambling + social**|`'fakenews-gambling-social'`|
 |**fakenews + porn + social**|`'fakenews-porn-social'`|
 |**gambling + porn + social**|`'gambling-porn-social'`|
-|**fakenews + gambling + porn + social**|`'fakenews-gambling-social'`|
+|**fakenews + gambling + porn + social**|`'fakenews-gambling-porn-social'`|
 
 ```
 download_path: /tmp/hosts-template
@@ -89,7 +89,7 @@ None.
       - host: app.example.com
         ip: 1.2.3.4
   roles:
-    - hosts_file
+    - samuelmwangiw.hosts_file
 ```
 
 ## Support
