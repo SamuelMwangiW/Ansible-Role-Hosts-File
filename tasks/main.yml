@@ -38,3 +38,4 @@
     owner: root
     group: root
     remote_src: yes
+    unsafe_writes: '{{ is_docker }}'
