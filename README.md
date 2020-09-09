@@ -94,7 +94,7 @@ None.
 
 ## Support
 
-I created this repository for the sole use with playbooks for setting up my workstation and may therefore be limited in functionalities. Issues and PRs are welcome.
+Issues and PRs are welcome.
 
 ## Licence
 
