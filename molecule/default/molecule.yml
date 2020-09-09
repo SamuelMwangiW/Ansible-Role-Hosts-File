@@ -2,36 +2,28 @@
 dependency:
   name: galaxy
 driver:
-  name: vagrant
+  name: docker
 platforms:
   - name: centos-7
-    box: centos/7
-    memory: 512
-    cpus: 1
+    image: centos:centos7
+
   - name: centos-8
-    box: centos/8
-    memory: 512
-    cpus: 1
+    image: centos:centos8
+
   - name: ubuntu-2004
-    box: generic/ubuntu2004
-    memory: 512
-    cpus: 1
+    image: ubuntu:focal
+
   - name: ubuntu-1804
-    box: generic/ubuntu1804
-    memory: 512
-    cpus: 1
+    image: ubuntu:bionic
+
   - name: jessie64
-    box: debian/jessie64
-    memory: 512
-    cpus: 1
+    image: debian:jessie
+
   - name: buster64
-    box: debian/buster64
-    memory: 512
-    cpus: 1
+    image: debian:buster
+    
   - name: stretch64
-    box: debian/stretch64
-    memory: 512
-    cpus: 1
+    image: debian:stretch
 
 provisioner:
   name: ansible

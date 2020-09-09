@@ -3,19 +3,12 @@
   hosts: all
   become: yes
   vars:
-    download_path: /tmp/hosts-template
-    tmp_path: /tmp/hosts
+    recipe: 'fakenews-gambling-porn-social'
     custom_hosts:
       - host: example.com
         ip: 1.1.1.1
-  pre_tasks:
-    - name: Override slow systemd-resolved service on ubuntu boxes
-      copy:
-        src: resolv.conf
-        dest: /etc/resolv.conf
-      when: ansible_distribution == "Ubuntu"
+      - host: example.test
+        ip: 1.2.3.4
 
-  tasks:
-    - name: "Include hosts_file role"
-      include_role:
-        name: "hosts_file"
+  roles:
+    - role: hosts_file
