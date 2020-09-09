@@ -19,11 +19,7 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - trusty
-        - xenial
-        - bionic
-        - focal
-
+        - all
   galaxy_tags:
     - hosts
     - ads
