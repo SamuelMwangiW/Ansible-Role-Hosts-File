@@ -1,0 +1,21 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  vars:
+    download_path: /tmp/hosts-template
+    tmp_path: /tmp/hosts
+    custom_hosts:
+      - host: example.com
+        ip: 1.1.1.1
+  pre_tasks:
+    - name: Override slow systemd-resolved service on ubuntu boxes
+      copy:
+        src: resolv.conf
+        dest: /etc/resolv.conf
+      when: ansible_distribution == "Ubuntu"
+
+  tasks:
+    - name: "Include hosts_file role"
+      include_role:
+        name: "hosts_file"

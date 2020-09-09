@@ -1,6 +1,6 @@
 ---
 # Extra custom hosts to insert into your hosts file
-custom_hosts:
+custom_hosts: {}
 
 recipe: 
 
@@ -23,9 +23,10 @@ hosts_file: /etc/hosts
 #  1. ansible_facts.default_ipv4.address
 #  2. ansible_facts.eth0.ipv4.address # where eth0 is your network interface
 #  3. static IP e.g 127.0.0.1
-local_ip: ansible_facts.default_ipv4.address
+local_ip: '{{ ansible_facts.default_ipv4.address }}'
 
 hosts_base_path: 'https://raw.githubusercontent.com/StevenBlack/hosts/master/'
+
 hosts_suffix: hosts
 
 hosts_url: '{{hosts_base_path}}{{ recipe_url }}{{ hosts_suffix }}'

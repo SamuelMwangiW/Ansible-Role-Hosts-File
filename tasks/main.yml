@@ -3,14 +3,16 @@
   get_url:
     url: "{{ hosts_url }}"
     dest: '{{ download_path }}'
-  register: result
+  notify: copy hosts file
 
-- name: Create a copy of hosts file if remote has changed
-  copy:
-    src: '{{ download_path }}'
-    dest: '{{ tmp_path }}'
-    remote_src: yes
-  when: result.changed
+- name: 'check if {{ tmp_path }} exists'
+  stat:
+    path: '{{ tmp_path }}'
+  register: temp_hosts
+  changed_when: not temp_hosts.stat.exists
+  notify: copy hosts file
+
+- meta: flush_handlers
 
 - name: Make sure hostname resolves to localhost
   lineinfile:

@@ -1,7 +1,6 @@
 galaxy_info:
   author: SamuelMwangiW
   description: An Ansible Role that updates hosts file to block Ads, Malware. Uses Steve Black's hosts repository by default though any hosts file would work
-  company: your company (optional)
   license: MIT
 
   min_ansible_version: 2.8
@@ -25,11 +24,8 @@ galaxy_info:
         - bionic
         - focal
 
-  galaxy_tags: 
-    - hosts file
-    - /etc/hosts
+  galaxy_tags:
+    - hosts
     - ads
     - adware
-    - block ads
-    - Steve Black
-  
+    - malware
