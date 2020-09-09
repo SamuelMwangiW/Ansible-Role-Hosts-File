@@ -30,3 +30,5 @@ hosts_base_path: 'https://raw.githubusercontent.com/StevenBlack/hosts/master/'
 hosts_suffix: hosts
 
 hosts_url: '{{hosts_base_path}}{{ recipe_url }}{{ hosts_suffix }}'
+
+is_docker: '{{ ansible_facts.virtualization_type is defined and ansible_facts.virtualization_type == "docker" }}'
