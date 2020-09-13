@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: hosts_file
+  role_name: hosts-file
   author: mwangithegreat
   description: An Ansible Role that updates hosts file to block Ads, Malware. Uses Steve Black's hosts repository by default though any hosts file would work
   license: MIT
