@@ -7,14 +7,14 @@ By default, this role also adds your hostname to ``/etc/hosts``
 
 ## Requirements
 
-I have only tested this Ansible role on CentOS and Ubuntu. In theory, this ansible role can be run on almost all devices, regardless of OS.
+I have only tested this Ansible role on CentOS, Debian and Ubuntu. In theory, this ansible role can be run on almost all devices, regardless of OS.
 
 ## Role Variables
 Available variables are listed below, along with default values (see ``defaults/main.yml``):
 ```
 recipe: ''
 ```
-The desired recipe as per the Steve Black's [hosts repository](https://github.com/StevenBlack/hosts). By default it uses the unified hosts. Below are the valid options:
+The desired recipe as per the @StevenBlack's [hosts repository](https://github.com/StevenBlack/hosts). By default it uses the unified hosts. Below are the valid options:
 
 
 | **Unified hosts** +|Recipe                    |
@@ -36,9 +36,11 @@ The desired recipe as per the Steve Black's [hosts repository](https://github.co
 |**gambling + porn + social**|`'gambling-porn-social'`|
 |**fakenews + gambling + porn + social**|`'fakenews-gambling-porn-social'`|
 
+
 ```
 download_path: /tmp/hosts-template
 ```
+
 The full path where the hosts file will be downloaded to
 ```
 insert_after_line: '# Custom host records are listed here.'
@@ -102,6 +104,6 @@ MIT / BSD
 
 ## Inspiration
 
-Role and Readme inspired by by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/), [Ansible for K8S](https://www.ansibleforkubernetes.com/), and [Jeff Geerling Youtube Channel](https://www.youtube.com/user/geerlingguy).
+Role and Readme inspired by by @geerlingguy, author of [Ansible for DevOps](https://www.ansiblefordevops.com/), [Ansible for K8S](https://www.ansibleforkubernetes.com/), and [an amazing Youtube Channel](https://www.youtube.com/user/geerlingguy).
 
-Also big thanks to the maintaners of [Steve Black's hosts repository](https://github.com/StevenBlack/hosts) and all upstream sources.
+Also big thanks to @StevenBlack for [the hosts repository](https://github.com/StevenBlack/hosts) and all upstream sources.
