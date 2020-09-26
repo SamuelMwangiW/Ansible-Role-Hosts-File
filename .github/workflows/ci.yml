@@ -21,20 +21,13 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
-      - name: Cache dependencies
-        uses: ktmud/cached-dependencies@v1
-
       - name: Set up Python 3.
         uses: actions/setup-python@v2
-
         with:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: |
-            cache-restore pip
-            pip3 install molecule docker yamllint ansible-lint
-            cache-save pip
+        run: pip3 install molecule docker yamllint ansible-lint
 
       - name: Run Molecule tests.
         run: molecule test -s default
