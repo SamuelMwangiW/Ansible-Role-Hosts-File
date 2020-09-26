@@ -1,14 +1,14 @@
 ---
 - name: Converge
   hosts: all
-  become: yes
+  become: true
   vars:
     download_path: /tmp/hosts-template
     tmp_path: /tmp/hosts
     custom_hosts:
       - host: example.com
         ip: 1.1.1.1
-        
+
   pre_tasks:
     - name: Override slow systemd-resolved service on ubuntu libvirt boxes
       copy:

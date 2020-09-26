@@ -3,7 +3,7 @@
 
 - name: Verify
   hosts: all
-  become: yes
+  become: true
   tasks:
     - name: Check that the remote config got downloaded
       stat:
@@ -22,7 +22,7 @@
         name: /etc/hosts
         line: "1.1.1.1 example.com"
         state: present
-      check_mode: yes
+      check_mode: true
       register: hosts
       failed_when: (hosts is changed) or (hosts is failed)
 

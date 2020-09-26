@@ -1,5 +1,6 @@
+---
 - name: copy hosts file
   copy:
     src: '{{ download_path }}'
     dest: '{{ tmp_path }}'
-    remote_src: yes
+    remote_src: true

@@ -24,7 +24,7 @@
 - name: "Add other custom_hosts"
   lineinfile:
     path: '{{ tmp_path }}'
-    regexp: "( {{ item.host }})$" # Ending with hostname allowing for the IP to be changed
+    regexp: "( {{ item.host }})$"
     line: "{{ item.ip }} {{ item.host }}"
     insertafter: '{{ insert_after_line }}'
   with_items: '{{ custom_hosts }}'
@@ -37,5 +37,5 @@
     mode: 0644
     owner: root
     group: root
-    remote_src: yes
+    remote_src: true
     unsafe_writes: '{{ is_docker }}'

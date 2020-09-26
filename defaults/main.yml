@@ -2,7 +2,7 @@
 # Extra custom hosts to insert into your hosts file
 custom_hosts: {}
 
-recipe: 
+recipe:
 
 alternative: 'alternates/{{ recipe }}/'
 
@@ -13,10 +13,10 @@ download_path: /tmp/hosts-template
 
 tmp_path: /tmp/hosts
 
-#insert custom hosts after this line
+# insert custom hosts after this line
 insert_after_line: '# Custom host records are listed here.'
 
-#system hosts file
+# system hosts file
 hosts_file: /etc/hosts
 
 # localhost ip. You could use either of:
@@ -30,5 +30,5 @@ hosts_base_path: 'https://raw.githubusercontent.com/StevenBlack/hosts/master/'
 hosts_suffix: hosts
 
 hosts_url: '{{hosts_base_path}}{{ recipe_url }}{{ hosts_suffix }}'
-
+# yamllint disable-line rule:line-length
 is_docker: '{{ ansible_facts.virtualization_type is defined and ansible_facts.virtualization_type == "docker" }}'
