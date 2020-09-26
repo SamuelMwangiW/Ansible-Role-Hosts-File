@@ -1,7 +1,3 @@
-default-setup-command() {
-  pip-install
-}
-
 pip-install() {
   cd $GITHUB_WORKSPACE
 
