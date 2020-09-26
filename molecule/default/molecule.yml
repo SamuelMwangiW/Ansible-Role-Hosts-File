@@ -11,6 +11,7 @@ platforms:
   - name: instance
     image: geerlingguy/docker-${MOLECULE_DISTRO:-centos8}-ansible:latest
     pre_build_image: true
+    privileged: true
 
 provisioner:
   name: ansible

@@ -9,7 +9,7 @@ name: CI
 jobs:
 
   test:
-    name: Molecule
+    name: Molecule test on ${{ matrix.distro }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
