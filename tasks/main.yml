@@ -31,6 +31,7 @@
   when: custom_hosts|length
 
 - name: Copy the hosts file to /etc/hosts
+  become: true
   copy:
     src: '{{ tmp_path }}'
     dest: '{{ hosts_file }}'

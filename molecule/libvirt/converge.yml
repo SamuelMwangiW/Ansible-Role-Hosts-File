@@ -20,4 +20,4 @@
       when: ansible_distribution == "Ubuntu"
 
   roles:
-    - role: samuelmwangiw.hosts_file
+    - role: hosts_file
