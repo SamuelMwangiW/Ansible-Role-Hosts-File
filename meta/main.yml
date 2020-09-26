@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: hosts-file
+  role_name: hosts_file
   author: mwangithegreat
   description: Updates hosts file using Steve Black's repository by default
   license: MIT
