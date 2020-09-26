@@ -10,7 +10,7 @@
         ip: 1.1.1.1
 
   pre_tasks:
-    - name: Override slow systemd-resolved service on ubuntu libvirt boxes
+    - name: Override slow systemd resolved service on ubuntu libvirt boxes
       copy:
         src: resolv.conf
         dest: /etc/resolv.conf

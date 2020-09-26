@@ -3,4 +3,5 @@
   copy:
     src: '{{ download_path }}'
     dest: '{{ tmp_path }}'
+    mode: 0664
     remote_src: true
