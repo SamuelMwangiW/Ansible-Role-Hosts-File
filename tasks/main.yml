@@ -37,6 +37,5 @@
     dest: '{{ hosts_file }}'
     mode: 0644
     owner: root
-    group: root
     remote_src: true
     unsafe_writes: '{{ is_docker }}'
